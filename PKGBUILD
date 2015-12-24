@@ -1,6 +1,6 @@
 pkgname=owncloud-client
-pkgver=2.0.2
-_pkgver=2.0.2
+pkgver=2.1.0
+_pkgver=2.1.0
 pkgrel=1
 arch=('x86_64')
 pkgdesc="Tool to synchronize files from ownCloud Server with your computer."
@@ -9,7 +9,7 @@ license=('GPL2')
 depends=('qt5-webkit' 'neon' 'qtkeychain')
 makedepends=('cmake' 'python2-sphinx')
 source=("https://github.com/owncloud/client/archive/v${_pkgver}.tar.gz")
-md5sums=('fb445c0c068b3f7fb428465b14295d5e')
+md5sums=('5618f6a6ebb85b503c6321f41ff61934')
 
 build() {
   mkdir -p build

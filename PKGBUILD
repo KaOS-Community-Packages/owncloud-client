@@ -1,21 +1,20 @@
 pkgname=owncloud-client
-pkgver=2.1.0
-_pkgver=2.1.0
+pkgver=2.1.1
 pkgrel=1
 arch=('x86_64')
 pkgdesc="Tool to synchronize files from ownCloud Server with your computer."
 url="https://owncloud.org/"
 license=('GPL2')
-depends=('qt5-webkit' 'neon' 'qtkeychain')
-makedepends=('cmake' 'python2-sphinx')
-source=("https://github.com/owncloud/client/archive/v${_pkgver}.tar.gz")
-md5sums=('5618f6a6ebb85b503c6321f41ff61934')
+depends=('qt5-webkit' 'neon' 'qtkeychain' 'qt5-base' 'sqlite')
+makedepends=('cmake' )
+source=("https://github.com/owncloud/client/archive/v${pkgver}.tar.gz")
+md5sums=('de4b1e6f61d9dd6afd05cd886b98d0ea')
 
 build() {
   mkdir -p build
   cd build
 
-  cmake ../client-${_pkgver} \
+  cmake ../client-${pkgver} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBDIR=lib \
@@ -25,6 +24,5 @@ build() {
 
 package() {
   cd build
-
   make DESTDIR=${pkgdir} install
 }
